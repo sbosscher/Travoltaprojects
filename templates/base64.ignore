@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Base64 Image</title>
+    <script>
+        function displayImage(base64String) {
+            var img = document.createElement("img");
+            img.src = "data:image/png;base64," + base64String;
+            document.body.appendChild(img);
+        }
+    </script>
+</head>
+<body>
+    {% if base64_string %}
+        <script>displayImage("{{ base64_string }}");</script>
+    {% else %}
+        <p>No image found.</p>
+    {% endif %}
+</body>
+</html>
